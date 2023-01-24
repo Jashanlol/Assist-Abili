@@ -1,2 +1,2 @@
 # Assist-Abili
-Camino extension tool to provide more accessibility options to the platform. 
+Camino extension tool that provides accessibility options to the platform.
