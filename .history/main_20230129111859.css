@@ -5,7 +5,7 @@ body {
   }
   
   /* Light mode styles */
-  .light-mode {
+  body.light-mode {
     background-color: #fff;
     color: #333;
   }

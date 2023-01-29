@@ -15,13 +15,8 @@
             "128": ""
         }
     },
-    "permissions": ["storage"],
-    "action": {
-        "default_popup": "popup.html"
-    },
     "content_scripts": [{
         "matches": ["https://camino.instructure.com/*"],
         "css": ["main.css"]
     }]
-
 }
