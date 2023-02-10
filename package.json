@@ -1,7 +1,12 @@
 {
   "dependencies": {
     "chai": "^4.3.7",
+    "jquery": "^3.6.3",
     "karma": "^6.4.1",
     "quixote": "^1.0.1"
+  },
+
+  "scripts": {
+    "test": "karma start"
   }
 }
