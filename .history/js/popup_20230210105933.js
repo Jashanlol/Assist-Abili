@@ -30,6 +30,18 @@ document.querySelector('#numAssignmentsSlider').addEventListener('input', functi
     });
 });
 
+// document.querySelector('#customDomain').addEventListener('input', function () {
+//     let domains = this.value.split(",");
+//     domains.forEach((domain, index) => {
+//         let val = domain.replace(" ", "");
+//         if (val.charAt(val.length - 1) === "/") {
+//             val = val.slice(0, -1);
+//         }
+//         domains[index] = val;
+//     });
+//     chrome.storage.local.set({ custom_domain: domains });
+// });
+
 switches.forEach(function (option) {
     chrome.storage.local.get(option, function (result) {
         let status = result[option] === true ? "#on" : "#off";
