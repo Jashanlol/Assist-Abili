@@ -15,7 +15,7 @@ h1, h2, p, body{margin:0;padding:0}
 .timeset {display: block;margin-top: 10px;font-size: 15px;}
 .timeset span {margin-left: 8px;}
 .header {font-size: 16px;display: flex;align-items: center;height:52px}
-#ablogo {position:absolute;right:15px;height: 52px;width:52px;}
+#bclogo {position:absolute;right:15px;height: 52px;width:52px;}
 #numAssignmentsSlider {display: block;margin-top: 14px;width: 100%;-webkit-appearance: none; appearance: none;background:#444;outline: none;height:6px;border-radius:20px;}
 #numAssignmentsSlider::-webkit-slider-thumb {-webkit-appearance: none; appearance: none;height: 18px; width: 18px;background: #727272;cursor: pointer;border-radius:30px;}
 .slidecontainer {font-size: 15px;}

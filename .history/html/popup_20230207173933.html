@@ -6,14 +6,14 @@
     <link href="../css/popup.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="main">
         <div class="header">
-            <h1>Assist Abili</h1><img id="ablogo" src="../images/icon_128.png">
+            <h1>Better Canvas</h1><img id="bclogo" src="icon/icon_128.png">
         </div>
         <div class="options">
             <div class="options-left">
@@ -32,18 +32,6 @@
                                     time</span></input></div>
                             <div class="timeset"><input type="time" id="autodark_end" step="60"><span>End
                                     time</span></input></div>
-                        </div>
-                    </div>
-                    <div class="customization">
-                        <div class="customization-header">
-                            <span>Custom Dark Modes</span>
-                        </div>
-                        <div class="container">
-                            <div class="options-presets option-container">
-                                <button id="setToDefaults" class="customization-button">Default</button>
-                                <button id="dg" class="preset-button customization-button">Dark Gray</button>
-                                <button id="blue-ish" class="preset-button customization-button">Blue-ish</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,6 +57,16 @@
                     <div>
                         <input type="checkbox" id="todo_hr24" name="todo_hr24">
                         <label for="todo_hr24">Use 24hr format</label>
+                    </div>
+                </div>
+                <div class="option-container">
+                    <div class="option" id="gradient_cards"><input type="radio" id="on" name="gradient_cards"><input
+                            type="radio" id="off" name="gradient_cards">
+                        <div class="slider">
+                            <div class="sliderknob"></div>
+                            <div class="sliderbg"></div>
+                        </div>
+                        <span>Gradient cards</span>
                     </div>
                 </div>
             </div>
@@ -111,6 +109,16 @@
                             <div class="sliderbg"></div>
                         </div><span>GPA calculator</span>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="customization">
+            <h1>Dark Mode Options</h1>
+            <div class="container">
+                <div class="options-presets option-container">
+                    <button id="setToDefaults" class="customization-button">Default</button>
+                    <button id="dg" class="preset-button customization-button">Dark Gray</button>
+                    <button id="blue-ish" class="preset-button customization-button">Blue-ish</button>
                 </div>
             </div>
         </div>

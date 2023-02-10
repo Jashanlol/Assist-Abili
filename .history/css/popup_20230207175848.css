@@ -44,7 +44,7 @@ button:active {filter:brightness(85%)}
 .option-color .color-changer {color:#000;}
 .customization {margin-top: 12px}
 .customization-header {font-size: 20px;margin-top: 10px}
-.customization-button {color:#e2e2e2;background:#444;margin: 5px;border: none;padding: 12px 24px;font-family: 'Rubik', sans-serif;border-radius:7px;transition:.1s background}
+.customization-button {color:#c21414;background:#444;margin: 5px;border: none;padding: 12px 24px;font-family: 'Rubik', sans-serif;border-radius:7px;transition:.1s background}
 .sub-options {margin-top: 5px;}
 h1, h2 {margin-top: 20px}
 
