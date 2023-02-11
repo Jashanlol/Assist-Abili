@@ -8,7 +8,10 @@
         "48": "/images/icon_48.png",
         "128": "/images/icon_128.png"
     },
-    "permissions": ["storage"],
+    "permissions": [
+        "runtime",
+        "storage"
+    ],
     "background":{
         "service_worker": "js/background.js"
     },
