@@ -5,7 +5,7 @@ let grades = null;
 let options = {};
 let timeCheck = null;
 
-isDomainCanvasPage();
+//isDomainCanvasPage();
 
 function startExtension() {
     toggleDarkMode();
@@ -417,20 +417,20 @@ function isDomainCanvasPage() {
     });
 }
 
-function setupCustomURL() {
+// function setupCustomURL() {
 
-    let test = getData(`${domain}/api/v1/users/self`);
-    test.then(res => {
-        if (res.name) {
-            console.log("Better Canvas - setting custom domain to " + domain);
-            chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
-        } else {
-            console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
-        }
-    }).catch(err => {
-        console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
-    });
-}
+//     let test = getData(`${domain}/api/v1/users/self`);
+//     test.then(res => {
+//         if (res.name) {
+//             console.log("Better Canvas - setting custom domain to " + domain);
+//             chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
+//         } else {
+//             console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
+//         }
+//     }).catch(err => {
+//         console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
+//     });
+// }
 
 function changeGradientCards() {
     if (options.gradient_cards === false) return;
@@ -553,17 +553,17 @@ function makeElement(element, elclass, location, text) {
     return creation
 }
 
-async function getData(url) {
-    let response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    });
-    let data = await response.json();
-    return data
-}
+// async function getData(url) {
+//     let response = await fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         }
+//     });
+//     let data = await response.json();
+//     return data
+// }
 
 function rgbToHsl(r, g, b) {
     r /= 255, g /= 255, b /= 255;
