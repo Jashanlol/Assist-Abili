@@ -1,37 +1,49 @@
-// let switches = ['assignments_due', 'gpa_calc', 'dark_mode', 'gradient_cards', 'dashboard_grades', 'dashboard_notes', 'improved_todo', 'condensed_cards'];
+let switches = ['assignments_due', 'gpa_calc', 'dark_mode', 'gradient_cards', 'dashboard_grades', 'dashboard_notes', 'improved_todo', 'condensed_cards'];
 
-// switches.forEach(function (option) {
-//     chrome.storage.local.get(option, function (result) {
-//         let status = result[option] === true ? "#on" : "#off";
-//         document.querySelector('#' + option + ' > ' + status).setAttribute('checked', true);
-//         document.querySelector('#' + option + ' > ' + status).classList.add('checked');
-//     });
-//     document.querySelector('#' + option + ' > .slider').addEventListener('mouseup', function () {
-//         document.querySelectorAll('#' + option + ' > input').forEach(function (box) {
-//             box.toggleAttribute('checked');
-//             box.classList.toggle('checked');
-//         });
-//         let status = document.querySelector('#' + option + ' > #on').checked;
-//         switch (option) {
-//             case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
-//         }
-//     });
-// });
-chrome.storage.local.get("dark_mode", function (result){
-    let status = result["dark_mode"] === true ? "#on" : "#off";
-    document.querySelector('#dark_mode > ' + status).setAttribute('checked', true);
-    document.querySelector('#dark_mode > ' + status).classList.add('checked');
-})
-document.querySelector('#dark_mode > .slider').addEventListener('mouseup', function () {
-    document.querySelectorAll('#dark_mode > input').forEach(function (box) {
-        box.toggleAttribute('checked');
-        box.classList.toggle('checked');
+switches.forEach(function (option) {
+    chrome.storage.local.get(option, function (result) {
+        let status = result[option] === true ? "#on" : "#off";
+        document.querySelector('#' + option + ' > ' + status).setAttribute('checked', true);
+        document.querySelector('#' + option + ' > ' + status).classList.add('checked');
     });
-    let status = document.querySelector('#dark_mode > #on').checked;
-    switch ("dark_mode") {
-        case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
-    }
+    document.querySelector('#' + option + ' > .slider').addEventListener('mouseup', function () {
+        document.querySelectorAll('#' + option + ' > input').forEach(function (box) {
+            box.toggleAttribute('checked');
+            box.classList.toggle('checked');
+        });
+        let status = document.querySelector('#' + option + ' > #on').checked;
+        switch (option) {
+            case 'gpa_calc': chrome.storage.local.set({ gpa_calc: status }); break;
+            case 'assignments_due': chrome.storage.local.set({ assignments_due: status }); break;
+            case 'gradient_cards': chrome.storage.local.set({ gradient_cards: status }); break;
+            case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
+            case 'dashboard_grades': chrome.storage.local.set({ dashboard_grades: status }); break;
+            case 'dashboard_notes': chrome.storage.local.set({ dashboard_notes: status }); break;
+            case 'improved_todo': chrome.storage.local.set({ improved_todo: status }); break;
+            case 'condensed_cards': chrome.storage.local.set({ condensed_cards: status }); break;
+        }
+    });
 });
+
+['autodark_start', 'autodark_end'].forEach(function (timeset) {
+    document.querySelector('#' + timeset).addEventListener('change', function () {
+        let timeinput = { "hour": this.value.split(':')[0], "minute": this.value.split(':')[1] };
+        timeset === "autodark_start" ? chrome.storage.local.set({ auto_dark_start: timeinput }) : chrome.storage.local.set({ auto_dark_end: timeinput });
+        sendFromPopup("autodarkmode");
+    });
+});
+
+function toggleDarkModeDisable(disabled) {
+    let darkSwitch = document.querySelector('#dark_mode');
+    if (disabled === true) {
+        darkSwitch.classList.add('switch_disabled');
+        darkSwitch.style.pointerEvents = "none";
+    } else {
+        darkSwitch.classList.remove('switch_disabled');
+        darkSwitch.style.pointerEvents = "auto";
+    }
+}
+
 // customization tab
 
 document.querySelector("#setToDefaults").addEventListener("click", setToDefaults);

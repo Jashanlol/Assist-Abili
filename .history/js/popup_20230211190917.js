@@ -28,7 +28,7 @@ document.querySelector('#dark_mode > .slider').addEventListener('mouseup', funct
         box.classList.toggle('checked');
     });
     let status = document.querySelector('#dark_mode > #on').checked;
-    switch ("dark_mode") {
+    switch (option) {
         case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
     }
 });
