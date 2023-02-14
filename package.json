@@ -4,7 +4,9 @@
   "description": "Camino extension tool that provides accessibility options to the platform.",
   "main": "index.js",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "chai": "^4.3.7",
+    "jsdom": "^21.1.0",
     "karma": "^6.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.1",
