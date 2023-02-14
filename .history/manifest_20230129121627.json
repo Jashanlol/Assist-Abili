@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Assist Abili",
+    "description": "A Camino extension tool that provides a plethora of accessibility options to the platform",
+    "version": "1.0",
+    "icons": {
+        "16": "/images/icon_16_2.png",
+        "48": "/images/icon_48.png",
+        "128": "/images/icon_128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "",
+            "48": "",
+            "128": ""
+        }
+    },
+    "permissions": ["storage"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["https://camino.instructure.com/*"],
+        "css": ["main.css"]
+    }]
+
+}

@@ -1,0 +1,14 @@
+/* Dark mode styles */
+body,
+header {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 12px;
+  font-family: sans-serif, Arial, Helvetica;
+}
+
+/* Light mode styles */
+.light-mode {
+  background-color: #fff;
+  color: #333;
+}
