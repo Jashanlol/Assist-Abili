@@ -5,7 +5,7 @@ global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 require('text-encoding').TextEncoder = TextEncoder;
 const jsdom = require('jsdom-global')(undefined, {
-    url: 'http://localhost:9876/'
+    url: 'http://localhost'
   });
 
 // Import the `TextEncoder` constructor from the `text-encoding` package.

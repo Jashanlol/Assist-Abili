@@ -129,3 +129,7 @@ function sendFromPopup(message) {
     } catch (e) {
     }
 }
+
+module.exports = {
+    makeElement
+};
