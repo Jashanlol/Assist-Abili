@@ -84,7 +84,26 @@ body{
     height: 52px;
     width:52px;
 }
-
+ #numAssignmentsSlider {
+    display: block;
+    margin-top: 14px;
+    width: 100%;
+    -webkit-appearance: none;
+     appearance: none;
+    background:#444;
+    outline: none;
+    height:6px;
+    border-radius:20px;
+}
+ #numAssignmentsSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+     appearance: none;
+    height: 18px;
+     width: 18px;
+    background: #727272;
+    cursor: pointer;
+    border-radius:30px;
+}
  .slidecontainer {
     font-size: 15px;
 }
@@ -94,3 +113,121 @@ body{
     padding: 10px;
     border-radius: 14px;
 }
+ a.option-container {
+    display: block;
+    color:#5ca5f6;
+    font-size: 14px;
+}
+ a.option-container:hover {
+    background: #333
+}
+ #customDomain {
+    background: #444;
+     border: none;
+    padding:8px;
+    color: #e2e2e2;
+    margin-top: 6px;
+    border-radius: 7px;
+    font-family: 'Rubik', sans-serif;
+    width: calc(100% - 14px)
+}
+ #autodark_start, #autodark_end {
+    background: #444;
+    color:#e2e2e2;
+    border:none;
+    padding: 5px;
+    border-radius: 7px;
+}
+ .options-left {
+    margin-right: 10px;
+}
+ .options-left, .options-right {
+    width: 50%;
+}
+ .customDomain {
+    font-size: 14px;
+}
+ .changer {
+    margin:0;
+    height:50px;
+    width:100%
+}
+ .option-background {
+    color: #fff
+}
+ .color-changer {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #000;
+    height: 30px;
+    width:100%;
+    padding:10px 0px 10px 10px;
+}
+ .color-changer input:focus-visible {
+    outline: none;
+}
+ .option-color, .option-background {
+    width: 100%;
+    border: 1px solid #3c3c3c
+}
+ .options {
+    display: flex;
+    justify-content: space-between
+}
+ .option{
+    border:1px solid transparent
+}
+ .changer:hover {
+    border: 1px solid red;
+}
+ .color-type-header {
+    color: #e2e2e2;
+    font-weight: normal;
+    margin: 10px 0
+}
+ button:hover {
+    cursor: pointer;
+    background:#adbcc724
+}
+ button:active {
+    filter:brightness(85%)
+}
+ #updateCSS {
+    border:1px solid #8dd28d;
+    background: #8dd28d24
+}
+ #updateCSS:hover {
+    background: #8dd28d24
+}
+ .option-background .color-changer {
+    color:#e2e2e2;
+}
+ .option-color .color-changer {
+    color:#000;
+}
+ .customization {
+    margin-top: 12px
+}
+ .customization-header {
+    font-size: 20px;
+    margin-top: 10px
+}
+ .customization-button {
+    color:#e2e2e2;
+    background:#444;
+    margin: 5px;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Rubik', sans-serif;
+    border-radius:7px;
+    transition:.1s background
+}
+ .sub-options {
+    margin-top: 5px;
+}
+ h1, h2 {
+    margin-top: 20px
+}
+ 

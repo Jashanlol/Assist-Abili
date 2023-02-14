@@ -12,7 +12,9 @@
         "runtime",
         "storage"
     ],
-
+    "background":{
+        "service_worker": "js/background.js"
+    },
     "action": {
         "default_popup": "html/popup.html",
         "default_icon": {
@@ -23,6 +25,7 @@
     },
     "content_scripts": [{
         "matches": ["https://camino.instructure.com/*"],
+        "css": ["css/content.css"],
         "js":  ["js/content.js"],
         "run_at": "document_start"
     }]

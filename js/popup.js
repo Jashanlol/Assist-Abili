@@ -1,4 +1,22 @@
+// let switches = ['assignments_due', 'gpa_calc', 'dark_mode', 'gradient_cards', 'dashboard_grades', 'dashboard_notes', 'improved_todo', 'condensed_cards'];
 
+// switches.forEach(function (option) {
+//     chrome.storage.local.get(option, function (result) {
+//         let status = result[option] === true ? "#on" : "#off";
+//         document.querySelector('#' + option + ' > ' + status).setAttribute('checked', true);
+//         document.querySelector('#' + option + ' > ' + status).classList.add('checked');
+//     });
+//     document.querySelector('#' + option + ' > .slider').addEventListener('mouseup', function () {
+//         document.querySelectorAll('#' + option + ' > input').forEach(function (box) {
+//             box.toggleAttribute('checked');
+//             box.classList.toggle('checked');
+//         });
+//         let status = document.querySelector('#' + option + ' > #on').checked;
+//         switch (option) {
+//             case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
+//         }
+//     });
+// });
 chrome.storage.local.get("dark_mode", function (result){
     let status = result["dark_mode"] === true ? "#on" : "#off";
     document.querySelector('#dark_mode > ' + status).setAttribute('checked', true);
