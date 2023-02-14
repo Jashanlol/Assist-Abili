@@ -1,4 +1,6 @@
-const { getComputedStyle } = require('@testing-library/jest-dom');
+const { window } = require('@testing-library/jest-dom');
+const getComputedStyle = window.getComputedStyle;
+
 
 test('Styles are applied correctly', () => {
   // Load the HTML file into an iframe

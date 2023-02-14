@@ -6,12 +6,16 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "chai": "^4.3.7",
+    "jasmine": "^4.5.0",
+    "jasmine-core": "^4.5.0",
+    "jest-environment-jsdom": "^29.4.2",
     "jsdom": "^21.1.0",
     "karma": "^6.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.1",
     "karma-mocha": "^2.0.1",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "text-encoding": "^0.7.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +32,7 @@
   },
   "homepage": "https://github.com/Jashanlol/Assist-Abili#readme",
   "dependencies": {
+    "jsdom-global": "^3.0.2",
     "sinon": "^15.0.1"
   }
 }
