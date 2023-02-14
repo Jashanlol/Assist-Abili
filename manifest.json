@@ -25,7 +25,6 @@
     },
     "content_scripts": [{
         "matches": ["https://camino.instructure.com/*"],
-        "css": ["css/content.css"],
         "js":  ["js/content.js"],
         "run_at": "document_start"
     }]

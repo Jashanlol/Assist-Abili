@@ -11,27 +11,8 @@ chrome.runtime.onInstalled.addListener(function () {
                         newOptions.new_install = true;
                         newInstallCSS();
                         break;
-                    case 'assignments_due': newOptions.assignments_due = true; break;
-                    case 'gpa_calc': newOptions.gpa_calc = false; break;
-                    case 'link_preview': newOptions.link_preview =false; break;
                     case 'dark_mode': newOptions.dark_mode = true; break;
-                    case 'gradient_cards': newOptions.gradient_cards = false; break;
-                    case 'assignment_potentials': newOptions.assignment_potentials = false; break;
-                    case 'auto_dark': newOptions.auto_dark =false; break;
-                    case 'auto_dark_start': newOptions.auto_dark_start = { "hour": "20", "minute": "00" }; break;
-                    case 'auto_dark_end': newOptions.auto_dark_end = { "hour": "08", "minute": "00" }; break;
-                    case 'num_assignments': newOptions.num_assignments = 5; break;
-                    case 'custom_domain': newOptions.custom_domain = ""; break;
-                    case 'assignments_done': newOptions.assignments_done = []; break;
-                    case 'dashboard_grades': newOptions.dashboard_grades = false; break;
-                    case 'assignment_date_format': newOptions.assignment_date_format = false; break;
-                    case 'assignments_quizzes': newOptions.assignments_quizzes = true; break;
-                    case 'assignments_discussions': newOptions.assignments_discussions = true; break;
-                    case 'dashboard_notes': newOptions.dashboard_notes = false; break;
-                    case 'dashboard_notes_text': newOptions.dashboard_notes_text = ""; break;
-                    case 'improved_todo': newOptions.improved_todo = true; break;
-                    case 'todo_hr24': newOptions.todo_hr24 = false; break;
-                    case 'condensed_cards': newOptions.condensed_cards = false; break;
+                    
                 }
             }
         });
@@ -51,7 +32,6 @@ function newInstallCSS() {
         });
     chrome.storage.local.set({ new_install: false });
 }
-
 
 function updateNewCSS() {
     fetch(chrome.runtime.getURL('js/darkcss.json'))
