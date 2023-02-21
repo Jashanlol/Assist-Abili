@@ -4,8 +4,33 @@ const fs = require('fs');
 const data = fs.readFileSync('html/popup.html', {encoding: 'utf8', flag: 'r'});
 const React = require('react');
 const { render, screen } = require('@testing-library/react');
-import Popup from "html/popup.html"; // <-------FIND OUT WHAT IS WRONG WITH THIS 
+import Popup from '../html/popup.html'; 
 
+global.chrome = {
+  runtime: {
+    id: 'extension_id',
+    getURL: jest.fn((path) => `chrome-extension://${this.id}/${path}`),
+  },
+  storage: {
+    local: {
+      get: jest.fn((key, callback) => callback({})),
+      set: jest.fn(),
+      remove: jest.fn(),
+    },
+  },
+  tabs: {
+    query: jest.fn((queryInfo, callback) => callback([])),
+    executeScript: jest.fn(),
+  },
+  extension: {
+    getURL: jest.fn((path) => `chrome-extension://${this.runtime.id}/${path}`),
+  },
+  webNavigation: {
+    onDOMContentLoaded: {
+      addListener: jest.fn(),
+    },
+  },
+};
 //import { makeElement } from './popup';
 test('webpage contents is same as html', () => {
   expect(document.documentElement.innerHTML).toBeTruthy();
@@ -102,3 +127,4 @@ test('Hyperlink color changes back to blue in light mode', () => {
   toggle.click();
   expect(getComputedStyle(document.querySelector(background.hyperlinkSelector)).color).toBe(background.lightModeHyperlinkColor);
 });
+

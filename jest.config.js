@@ -4,6 +4,9 @@ module.exports = {
     //setupFilesAfterEnv: ['./test-setup.js'],
     testEnvironment: 'jest-environment-jsdom',
     verbose:true,
-    modulePaths: ["<rootDir>"]
+    modulePaths: ["<rootDir>"],
+    moduleNameMapper: {
+      '\\.html$': 'raw-loader',
+    },
   };
 
