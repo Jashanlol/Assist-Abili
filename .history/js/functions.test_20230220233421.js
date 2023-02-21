@@ -32,7 +32,7 @@ test('Default mode is light mode', () => {
 
 // Test that the toggle switch for the dark mode functionality is set to off by default.
 test('Dark mode toggle is off by default', () => {
-  expect(document.querySelector('dark_mode').checked).toBe(false);
+  expect(document.querySelector('#dark-mode-toggle').checked).toBe(false);
 });
 
 // Test that the HTML and CSS files for the dark mode functionality are loaded correctly.
@@ -47,49 +47,49 @@ test('Dark mode JavaScript code loaded correctly', () => {
 
 // Test that the toggle switch for the dark mode functionality changes to on when clicked.
 test('Dark mode toggle changes to on when clicked', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(toggle.checked).toBe(true);
 });
 
 // Test that the toggle switch for the dark mode functionality changes to off when clicked again.
 test('Dark mode toggle changes to off when clicked again', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(toggle.checked).toBe(false);
 });
 
 // Test that the body background color changes to black when dark mode is activated.
 test('Body background color changes to black in dark mode', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(getComputedStyle(document.body).getPropertyValue('background-color')).toBe('rgb(0, 0, 0)');
 });
 
 // Test that the body background color changes back to white when dark mode is deactivated.
 test('Body background color changes back to white in light mode', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(getComputedStyle(document.body).getPropertyValue('background-color')).toBe('rgb(255, 255, 255)');
 });
 
 // Test that the text color changes to white when dark mode is activated.
 test('Text color changes to white in dark mode', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(getComputedStyle(document.body).getPropertyValue('color')).toBe('rgb(255, 255, 255)');
 });
 
 // Test that the text color changes back to black when dark mode is deactivated.
 test('Text color changes back to black in light mode', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(getComputedStyle(document.body).getPropertyValue('color')).toBe('rgb(0, 0, 0)');
 });
 
 // Test that the color of hyperlinks changes to light blue when dark mode is activated.
 test('Hyperlink color changes to light blue in dark mode', () => {
-  const toggle = document.querySelector('dark_mode');
+  const toggle = document.querySelector('#dark-mode-toggle');
   toggle.click();
   expect(getComputedStyle(document.querySelector('a')).getPropertyValue('color')).toBe('rgb(173, 216, 230)');
 });

@@ -146,10 +146,10 @@ module.exports = {
     startExtension
 }
 
-// // // Test that the Chrome extension loads successfully.
-// // test('Chrome extension loads successfully', () => {
-// //     expect(typeof chrome).toBe('object');
-// //   });
+// // Test that the Chrome extension loads successfully.
+// test('Chrome extension loads successfully', () => {
+//     expect(typeof chrome).toBe('object');
+//   });
 
 // global.chrome = {
 //     runtime: {
@@ -157,7 +157,7 @@ module.exports = {
 //     }
 // };
 
-// test('Extension loads successfully', () => {
-//     // Use the chrome.runtime API to check if the extension is installed and enabled
-//     expect(global.chrome.runtime.getManifest()).toBeDefined();
-//   });
+test('Extension loads successfully', () => {
+    // Use the chrome.runtime API to check if the extension is installed and enabled
+    expect(global.chrome.runtime.getManifest()).toBeDefined();
+  });
