@@ -1,14 +1,18 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
+let assignments = null;
+let grades = null;
 let options = {};
+let timeCheck = null;
 
-//isDomainCanvasPage();
+isDomainCanvasPage();
 
 function startExtension() {
     toggleDarkMode();
     const optionsList = ["assignments_due", "dashboard_grades", "gradient_cards", 'num_assignments', 'assignments_done', "gpa_calc", "assignment_date_format", "assignments_quizzes", "assignments_discussions", "dashboard_notes", "dashboard_notes_text", "improved_todo", "todo_hr24", "new_install", "condensed_cards"];
     chrome.storage.local.get(optionsList, result => {
         options = { ...options, ...result };
+        toggleAutoDarkMode();
     });
 
     chrome.runtime.onMessage.addListener(function (request) {

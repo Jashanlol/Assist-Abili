@@ -1,14 +1,18 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
+let assignments = null;
+let grades = null;
 let options = {};
+let timeCheck = null;
 
-//isDomainCanvasPage();
+isDomainCanvasPage();
 
 function startExtension() {
     toggleDarkMode();
     const optionsList = ["assignments_due", "dashboard_grades", "gradient_cards", 'num_assignments', 'assignments_done', "gpa_calc", "assignment_date_format", "assignments_quizzes", "assignments_discussions", "dashboard_notes", "dashboard_notes_text", "improved_todo", "todo_hr24", "new_install", "condensed_cards"];
     chrome.storage.local.get(optionsList, result => {
         options = { ...options, ...result };
+        toggleAutoDarkMode();
     });
 
     chrome.runtime.onMessage.addListener(function (request) {
@@ -99,32 +103,32 @@ function iframeChecker(enabled) {
 //     });
 // }
 
-// function setupCustomURL() {
+function setupCustomURL() {
 
-//     let test = getData(`${domain}/api/v1/users/self`);
-//     test.then(res => {
-//         if (res.name) {
-//             console.log("Better Canvas - setting custom domain to " + domain);
-//             chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
-//         } else {
-//             console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
-//         }
-//     }).catch(err => {
-//         console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
-//     });s
-// }
+    let test = getData(`${domain}/api/v1/users/self`);
+    test.then(res => {
+        if (res.name) {
+            console.log("Better Canvas - setting custom domain to " + domain);
+            chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
+        } else {
+            console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
+        }
+    }).catch(err => {
+        console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
+    });
+}
 
-// async function getData(url) {
-//     let response = await fetch(url, {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         }
-//     });
-//     let data = await response.json();
-//     return data
-// }
+async function getData(url) {
+    let response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
+    let data = await response.json();
+    return data
+}
 
 module.exports = {
     startExtension
