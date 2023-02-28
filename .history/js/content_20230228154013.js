@@ -2,7 +2,7 @@ const domain = window.location.origin;
 const current_page = window.location.pathname;
 let options = {};
 
-isDomainCanvasPage();
+//isDomainCanvasPage();
 
 function startExtension() {
     toggleDarkMode();
