@@ -1,7 +1,6 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
 let options = {};
-let timeCheck = null;
 
 isDomainCanvasPage();
 
@@ -97,20 +96,20 @@ function isDomainCanvasPage() {
     });
 }
 
-function setupCustomURL() {
+// function setupCustomURL() {
 
-    let test = getData(`${domain}/api/v1/users/self`);
-    test.then(res => {
-        if (res.name) {
-            console.log("Better Canvas - setting custom domain to " + domain);
-            chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
-        } else {
-            console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
-        }
-    }).catch(err => {
-        console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
-    });
-}
+//     let test = getData(`${domain}/api/v1/users/self`);
+//     test.then(res => {
+//         if (res.name) {
+//             console.log("Better Canvas - setting custom domain to " + domain);
+//             chrome.storage.local.set({ custom_domain: [domain] }).then(location.reload());
+//         } else {
+//             console.log("Better Canvas - this url doesn't seem to be a canvas url (1)");
+//         }
+//     }).catch(err => {
+//         console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
+//     });s
+// }
 
 async function getData(url) {
     let response = await fetch(url, {

@@ -1,9 +1,8 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
 let options = {};
-let timeCheck = null;
 
-isDomainCanvasPage();
+//isDomainCanvasPage();
 
 function startExtension() {
     toggleDarkMode();
@@ -69,6 +68,9 @@ function iframeChecker(enabled) {
     iframeObserver.observe(document.querySelector('html'), { childList: true, subtree: true });
 }
 
+
+
+
 function isDomainCanvasPage() {
     chrome.storage.local.get(['custom_domain', 'dark_css', 'dark_mode'], result => {
         options = result;
@@ -109,7 +111,7 @@ function setupCustomURL() {
         }
     }).catch(err => {
         console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
-    });
+    });s
 }
 
 async function getData(url) {

@@ -1,7 +1,6 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
 let options = {};
-let timeCheck = null;
 
 isDomainCanvasPage();
 

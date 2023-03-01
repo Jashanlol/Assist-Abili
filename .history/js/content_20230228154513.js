@@ -1,7 +1,6 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
 let options = {};
-let timeCheck = null;
 
 isDomainCanvasPage();
 
@@ -109,20 +108,20 @@ function setupCustomURL() {
         }
     }).catch(err => {
         console.log("Better Canvas - this url doesn't seem to be a canvas url (2)");
-    });
+    });s
 }
 
-async function getData(url) {
-    let response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    });
-    let data = await response.json();
-    return data
-}
+// async function getData(url) {
+//     let response = await fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         }
+//     });
+//     let data = await response.json();
+//     return data
+// }
 
 module.exports = {
     startExtension
