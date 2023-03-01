@@ -94,3 +94,10 @@
     padding: 10px;
     border-radius: 14px;
 }
+.options-left {
+    margin-right: 10px;
+  }
+  
+  .options-right {
+    margin-left: 10px;
+  }

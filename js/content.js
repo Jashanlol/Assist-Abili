@@ -1,9 +1,7 @@
 const domain = window.location.origin;
 const current_page = window.location.pathname;
-let assignments = null;
-let grades = null;
 let options = {};
-let timeCheck = null;
+
 
 isDomainCanvasPage();
 
@@ -12,12 +10,6 @@ function startExtension() {
     const optionsList = ["assignments_due", "dashboard_grades", "gradient_cards", "auto_dark", "auto_dark_start", "auto_dark_end", 'num_assignments', 'assignments_done', "gpa_calc", "assignment_date_format", "assignments_quizzes", "assignments_discussions", "dashboard_notes", "dashboard_notes_text", "improved_todo", "todo_hr24", "new_install", "condensed_cards"];
     chrome.storage.local.get(optionsList, result => {
         options = { ...options, ...result };
-        toggleAutoDarkMode();
-        getAssignmentData();
-        checkDashboardReady();
-        if (options.condensed_cards === true) {
-            condenseCards();
-        }
     });
 
     chrome.runtime.onMessage.addListener(function (request) {
@@ -25,9 +17,6 @@ function startExtension() {
             options = { ...options, ...result };
             if (request.message === "darkmode") {
                 toggleDarkMode();
-            }
-            if (request.message === "autodarkmode") {
-                toggleAutoDarkMode();
             }
         })
     });
@@ -145,19 +134,3 @@ async function getData(url) {
 module.exports = {
     startExtension
 }
-
-// // // Test that the Chrome extension loads successfully.
-// // test('Chrome extension loads successfully', () => {
-// //     expect(typeof chrome).toBe('object');
-// //   });
-
-// global.chrome = {
-//     runtime: {
-//       sendMessage: jest.fn()
-//     }
-// };
-
-// test('Extension loads successfully', () => {
-//     // Use the chrome.runtime API to check if the extension is installed and enabled
-//     expect(global.chrome.runtime.getManifest()).toBeDefined();
-//   });
