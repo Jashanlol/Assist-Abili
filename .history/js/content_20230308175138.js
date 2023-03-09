@@ -123,3 +123,7 @@ async function getData(url) {
     let data = await response.json();
     return data
 }
+
+module.exports = {
+    startExtension
+}

@@ -118,8 +118,3 @@
     border-radius:7px;
     transition:.1s
 }
-#updateCSS {border:1px solid #8dd28d;background: #8dd28d24}
-#updateCSS:hover {background: #8dd28d24}
-button:hover {cursor: pointer;background:#adbcc724}
-button:active {filter:brightness(85%)}
-.option-background {color: #fff}

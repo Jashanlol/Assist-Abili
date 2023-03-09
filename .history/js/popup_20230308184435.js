@@ -36,17 +36,6 @@ document.querySelector('#' + option + ' > .slider').addEventListener('mouseup', 
     }
 });
 });
-
-function toggleDarkModeDisable(disabled) {
-    let darkSwitch = document.querySelector('#dark_mode');
-    if (disabled === true) {
-        darkSwitch.classList.add('switch_disabled');
-        darkSwitch.style.pointerEvents = "none";
-    } else {
-        darkSwitch.classList.remove('switch_disabled');
-        darkSwitch.style.pointerEvents = "auto";
-    }
-}
 // customization tab
 
 document.querySelector("#setToDefaults").addEventListener("click", setToDefaults);
@@ -144,3 +133,7 @@ function sendFromPopup(message) {
     } catch (e) {
     }
 }
+
+module.exports = {
+    makeElement
+};

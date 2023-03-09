@@ -96,30 +96,8 @@
 }
 .options-left {
     margin-right: 10px;
-}
+  }
   
 .options-right {
-    margin-left: 10px;
+margin-left: 10px;
 }
-.customization {
-    margin-top: 12px
-}
-.customization-header {
-    font-size: 20px;
-    margin-top: 10px
-}
-.customization-button {
-    color:#e2e2e2;
-    background:#444;
-    margin: 5px;
-    border: none;
-    padding: 12px 24px;
-    font-family: 'Rubik', sans-serif;
-    border-radius:7px;
-    transition:.1s
-}
-#updateCSS {border:1px solid #8dd28d;background: #8dd28d24}
-#updateCSS:hover {background: #8dd28d24}
-button:hover {cursor: pointer;background:#adbcc724}
-button:active {filter:brightness(85%)}
-.option-background {color: #fff}

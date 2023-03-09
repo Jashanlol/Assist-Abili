@@ -1,4 +1,4 @@
-let switches = ['dark_mode', 'dyslexia_mode', 'cb_mode'];
+let switches = ['dark_mode', 'dyslexia_mode'];
 
 /*chrome.storage.local.get("dark_mode", function (result){
     let status = result["dark_mode"] === true ? "#on" : "#off";
@@ -32,21 +32,9 @@ document.querySelector('#' + option + ' > .slider').addEventListener('mouseup', 
     switch (option) {
         case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
         case 'dyslexia_mode': chrome.storage.local.set({ dyslexia_mode: status }); sendFromPopup("dyslexiamode"); break;
-        case 'cb_mode': chrome.storage.local.set({ cb_mode: status }); sendFromPopup("colorblindmode"); break;
     }
 });
 });
-
-function toggleDarkModeDisable(disabled) {
-    let darkSwitch = document.querySelector('#dark_mode');
-    if (disabled === true) {
-        darkSwitch.classList.add('switch_disabled');
-        darkSwitch.style.pointerEvents = "none";
-    } else {
-        darkSwitch.classList.remove('switch_disabled');
-        darkSwitch.style.pointerEvents = "auto";
-    }
-}
 // customization tab
 
 document.querySelector("#setToDefaults").addEventListener("click", setToDefaults);
@@ -144,3 +132,7 @@ function sendFromPopup(message) {
     } catch (e) {
     }
 }
+
+module.exports = {
+    makeElement
+};

@@ -9,6 +9,7 @@
         "128": "/images/icon_128.png"
     },
     "permissions": [
+        "runtime",
         "storage"
     ],
     "background":{
