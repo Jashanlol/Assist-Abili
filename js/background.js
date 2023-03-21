@@ -14,7 +14,7 @@ chrome.runtime.onInstalled.addListener(function () {
                     case 'dark_mode': newOptions.dark_mode = true; break;
                     case 'dyslexia_mode': newOptions.dyslexia_mode = true; break;
                     case 'cb_mode1' : newOptions.cb_mode1 = true; break;
-                    case 'cb_mode1' : newOptions.cb_mode1 = true; break;
+                    case 'cb_mode2' : newOptions.cb_mode2 = true; break;
                     
                 }
             }
