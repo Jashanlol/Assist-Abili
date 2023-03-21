@@ -12,7 +12,6 @@
         "storage",
         "tabs", 
         "scripting",
-        "https://camino.instructure.com/*",
         "activeTab"
     ],
     "background":{
