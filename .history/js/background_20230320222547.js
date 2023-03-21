@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(function () {
-    let optionslist = ['dark_mode', 'dyslexia_mode'];
+    let optionslist = ['dark_mode', 'dyslexia_mode', 'cb_mode'];
     chrome.storage.local.get(optionslist, function (result) {
         let newOptions = {};
         optionslist.forEach(function (option) {
@@ -13,6 +13,8 @@ chrome.runtime.onInstalled.addListener(function () {
                         break;
                     case 'dark_mode': newOptions.dark_mode = true; break;
                     case 'dyslexia_mode': newOptions.dyslexia_mode = true; break;
+                    case 'cb_mode' : newOptions.cb_mode1 = true; break;
+                    
                 }
             }
         });

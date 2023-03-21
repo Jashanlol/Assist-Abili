@@ -1,5 +1,11 @@
-let switches = ['dark_mode', 'dyslexia_mode'];
+let switches = ['dark_mode', 'dyslexia_mode', 'cb_mode1', 'cb_mode2'];
 
+chrome.storage.local.get(['dark_mode', 'dyslexia_mode', 'cb_mode1', 'cb_mode2'], function(result){
+    document.querySelector('#dark_mode').checked = result.dark_mode;
+    document.querySelector('#dyslexia_mode').checked = result.dyslexia_mode;
+    document.querySelector('#cb_mode1').checked = result.cb_mode1;
+    document.querySelector('#cb_mode2').checked = result.cb_mode2;
+})
 switches.forEach(function (option) {
     chrome.storage.local.get(option, function (result){
         let status = result[option] === true ? "#on" : "#off";
@@ -15,6 +21,8 @@ switches.forEach(function (option) {
         switch (option) {
             case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
             case 'dyslexia_mode': chrome.storage.local.set({ dyslexia_mode: status }); sendFromPopup("dyslexiamode"); break;
+            case 'cb_mode1': chrome.storage.local.set({ cb_mode1: status }); sendFromPopup("colorblindmode1"); break;
+            case 'cb_mode2': chrome.storage.local.set({ cb_mode2: status }); sendFromPopup("colorblindmode2"); break;
         }
     });
 });
@@ -31,9 +39,9 @@ function toggleDarkModeDisable(disabled) {
 }
 // customization tab
 
-document.querySelector("#setToDark").addEventListener("click", setToDefaults);
+document.querySelector("#setToDefaults").addEventListener("click", setToDefaults);
 
-document.querySelectorAll(".preset-button.customization-button").forEach(btn => btn.addEventListener("click", changeToPresetCSS));
+document.querySelectorAll(".slider").forEach(btn => btn.addEventListener("click", changeToPresetCSS));
 
 chrome.storage.local.get(['dark_css'], result => getColors(result.dark_css));
 
@@ -81,19 +89,10 @@ function changeToPresetCSS(e) {
         let css;
         switch (e.target.id) {
             case ('red-green'):
-                css = ":root{--abbackgrounddark0:#0072b2;--abbackgrounddark1:#e69f00;--abbackgrounddark2:#f0e442;--abbackgrounddark3:#d55e00;--abtextlight0:#66004d;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#342DD1;--abstop:#000}";
-                break;
-            case ('blue-yellow'):
-                css = ":root{--abbackgrounddark0:#006262;--abbackgrounddark1:#007070;--abbackgrounddark2:#ff0066;--abbackgrounddark3:#c10045;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#66004d;--abstop:#000}";
-                break;
-            case ('jashan'):
-                css = ":root{--abbackgrounddark0:#e27d60;--abbackgrounddark1:#85dcb;--abbackgrounddark2:#e8a87c;--abbackgrounddark3:#c38d9e;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#177ff2;--abstop:#000}";
+                css = ":root{--abbackgrounddark0:#272727;--abbackgrounddark1:#353535;--abbackgrounddark2:#404040;--abbackgrounddark3:#454545;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
             case ('blue-yellow'):
                 css = ":root{--abbackgrounddark0:#14181d;--abbackgrounddark1:#1a2026;--abbackgrounddark2:#212930;--abbackgrounddark3:#2e3943;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
-                break;
-            case ('custom'):
-                css = ":root{--abbackgrounddark0:#000000;--abbackgrounddark1:#474747;--abbackgrounddark2:#b2b2b2;--abbackgrounddark3:#7b7b7b;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
         }
         let new_css = css + right;

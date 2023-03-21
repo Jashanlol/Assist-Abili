@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(function () {
-    let optionslist = ['dark_mode', 'dyslexia_mode'];
+    let optionslist = ['new_install', 'assignments_due', 'gpa_calc', 'dark_mode', 'gradient_cards', 'link_preview', 'auto_dark', 'auto_dark_start', 'auto_dark_end', 'assignment_potentials', 'num_assignments', 'assignments_done', 'assignment_date_format', 'assignments_quizzes', 'assignments_discussions', 'dashboard_notes', 'dashboard_notes_text', 'improved_todo', 'todo_hr24', 'condensed_cards'];
     chrome.storage.local.get(optionslist, function (result) {
         let newOptions = {};
         optionslist.forEach(function (option) {
@@ -13,6 +13,9 @@ chrome.runtime.onInstalled.addListener(function () {
                         break;
                     case 'dark_mode': newOptions.dark_mode = true; break;
                     case 'dyslexia_mode': newOptions.dyslexia_mode = true; break;
+                    case 'cb_mode1' : newOptions.cb_mode1 = true; break;
+                    case 'cb_mode2' : newOptions.cb_mode2 = true; break;
+                    
                 }
             }
         });

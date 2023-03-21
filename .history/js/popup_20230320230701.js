@@ -81,19 +81,10 @@ function changeToPresetCSS(e) {
         let css;
         switch (e.target.id) {
             case ('red-green'):
-                css = ":root{--abbackgrounddark0:#0072b2;--abbackgrounddark1:#e69f00;--abbackgrounddark2:#f0e442;--abbackgrounddark3:#d55e00;--abtextlight0:#66004d;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#342DD1;--abstop:#000}";
-                break;
-            case ('blue-yellow'):
-                css = ":root{--abbackgrounddark0:#006262;--abbackgrounddark1:#007070;--abbackgrounddark2:#ff0066;--abbackgrounddark3:#c10045;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#66004d;--abstop:#000}";
-                break;
-            case ('jashan'):
-                css = ":root{--abbackgrounddark0:#e27d60;--abbackgrounddark1:#85dcb;--abbackgrounddark2:#e8a87c;--abbackgrounddark3:#c38d9e;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#177ff2;--abstop:#000}";
+                css = ":root{--abbackgrounddark0:#272727;--abbackgrounddark1:#353535;--abbackgrounddark2:#404040;--abbackgrounddark3:#454545;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
             case ('blue-yellow'):
                 css = ":root{--abbackgrounddark0:#14181d;--abbackgrounddark1:#1a2026;--abbackgrounddark2:#212930;--abbackgrounddark3:#2e3943;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
-                break;
-            case ('custom'):
-                css = ":root{--abbackgrounddark0:#000000;--abbackgrounddark1:#474747;--abbackgrounddark2:#b2b2b2;--abbackgrounddark3:#7b7b7b;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
         }
         let new_css = css + right;
