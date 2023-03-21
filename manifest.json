@@ -9,7 +9,8 @@
         "128": "/images/icon_128.png"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ],
     "background":{
         "service_worker": "js/background.js"

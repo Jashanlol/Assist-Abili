@@ -123,3 +123,24 @@ async function getData(url) {
     let data = await response.json();
     return data
 }
+
+
+const decreaseFontMode = function (){
+    chrome.tabs.executeScript({
+      code: 'var elements = document.getElementsByTagName("*"); for (var i = 0; i < elements.length; i++) { var fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize); elements[i].style.fontSize = (fontSize - 1) + "px"; }'
+    });
+    
+    chrome.tabs.insertCSS({code: "body, * { fontSize: 3rem !important; color: #fff !important; }"});
+  
+}
+const increaseFontMode = function (){
+    chrome.tabs.executeScript({
+      code: 'var elements = document.getElementsByTagName("*"); for (var i = 0; i < elements.length; i++) { var fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize); elements[i].style.fontSize = (fontSize + 1) + "px"; }'
+    });
+  
+}
+let minus_button = document.querySelector("#minus");
+let plus_button = document.querySelector("#plus");
+
+minus_button.addEventListener("click", decreaseFontMode);
+plus_button.addEventListener("click", increaseFontMode);
