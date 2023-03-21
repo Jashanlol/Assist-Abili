@@ -13,6 +13,7 @@ chrome.runtime.onInstalled.addListener(function () {
                         break;
                     case 'dark_mode': newOptions.dark_mode = true; break;
                     case 'dyslexia_mode': newOptions.dyslexia_mode = true; break;
+                    
                 }
             }
         });
