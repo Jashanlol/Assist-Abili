@@ -80,10 +80,7 @@ function changeToPresetCSS(e) {
         const right = result.dark_css.split("--abstop:#000}")[1];
         let css;
         switch (e.target.id) {
-            case ('red-green1'):
-                css = ":root{--abbackgrounddark0:#6D5216;--abbackgrounddark1:#c99207;--abbackgrounddark2:#FFD79E;--abbackgrounddark3:#E0A800;--abtextlight0:#66004d;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
-                break;
-            case ('red-green2'):
+            case ('red-green'):
                 css = ":root{--abbackgrounddark0:#6D5216;--abbackgrounddark1:#c99207;--abbackgrounddark2:#FFD79E;--abbackgrounddark3:#E0A800;--abtextlight0:#66004d;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
             case ('blue-yellow'):
