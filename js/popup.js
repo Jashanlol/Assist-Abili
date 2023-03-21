@@ -1,4 +1,6 @@
 let switches = ['dark_mode'];
+let decreased = false;
+let increased = false;
 
 switches.forEach(function (option) {
     chrome.storage.local.get(option, function (result){
@@ -139,22 +141,39 @@ function sendFromPopup(message) {
     }
 }
 
-const decreaseFontMode = function (){
-    chrome.tabs.executeScript({
-      code: 'var elements = document.getElementsByTagName("*"); for (var i = 0; i < elements.length; i++) { var fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize); elements[i].style.fontSize = (fontSize - 1) + "px"; }'
+const decreaseFontMode = function () {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.scripting.executeScript({
+        target: {tabId: tabs[0].id},
+        func: () => {
+          const elements = document.getElementsByTagName("*");
+          for (let i = 0; i < elements.length; i++) {
+            const fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize);
+            elements[i].style.fontSize = (fontSize - 1) + "px";
+          }
+        }
+      });
     });
+  }
     
-    chrome.tabs.insertCSS({code: "body, * { fontSize: 3rem !important; color: #fff !important; }"});
-  
-}
-const increaseFontMode = function (){
-    chrome.tabs.executeScript({
-      code: 'var elements = document.getElementsByTagName("*"); for (var i = 0; i < elements.length; i++) { var fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize); elements[i].style.fontSize = (fontSize + 1) + "px"; }'
+  const increaseFontMode = function () {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.scripting.executeScript({
+        target: {tabId: tabs[0].id},
+        func: () => {
+          const elements = document.getElementsByTagName("*");
+          for (let i = 0; i < elements.length; i++) {
+            const fontSize = parseFloat(window.getComputedStyle(elements[i]).fontSize);
+            elements[i].style.fontSize = (fontSize + 1) + "px";
+          }
+        }
+      });
     });
+  }
   
-}
-let minus_button = document.querySelector("#minus");
-let plus_button = document.querySelector("#plus");
-
-minus_button.addEventListener("click", decreaseFontMode);
-plus_button.addEventListener("click", increaseFontMode);
+  let minus_button = document.querySelector("#minus");
+  let plus_button = document.querySelector("#plus");
+  
+  minus_button.addEventListener("click", decreaseFontMode);
+  plus_button.addEventListener("click", increaseFontMode);
+  

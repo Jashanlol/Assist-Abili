@@ -10,7 +10,10 @@
     },
     "permissions": [
         "storage",
-        "tabs"
+        "tabs", 
+        "scripting",
+        "https://camino.instructure.com/*",
+        "activeTab"
     ],
     "background":{
         "service_worker": "js/background.js"
