@@ -4,7 +4,7 @@ You can find our repository at https://github.com/Jashanlol/Assist-Abili
 
 ### 1. Copying the repository
 
-**Method 1**
+## Method 1
 You can easily download extension by going to your local IDE and running in the command line:
 
 ```
@@ -13,7 +13,7 @@ git clone https://github.com/Jashanlol/Assist-Abili.git
 From there, our extension will appear in the Assist-Abili folder. 
 
 
-**Method 2:**
+## Method 2
 Download the latest Assist Abili release and extract all files from the zip. 
 
 ### 2. Uploading the extension to Chrome
