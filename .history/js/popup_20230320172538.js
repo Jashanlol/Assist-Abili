@@ -1,4 +1,4 @@
-let switches = ['dark_mode', 'dyslexia_mode', 'cb_mode1', 'cb_mode2'];
+let switches = ['dark_mode', 'dyslexia_mode', 'cb_mode'];
 
 /*chrome.storage.local.get("dark_mode", function (result){
     let status = result["dark_mode"] === true ? "#on" : "#off";
