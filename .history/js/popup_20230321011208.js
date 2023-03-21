@@ -14,7 +14,7 @@ switches.forEach(function (option) {
         let status = document.querySelector('#' + option + ' > #on').checked;
         switch (option) {
             case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
-            case 'font_adjust': chrome.storage.local.set({ font_adjust: status }); sendFromPopup("fontadjust"); break;
+            case 'font_adjust': chrome.storage.local.set({ font_adjust: status }); sendFromPopup("font_adjust"); break;
         }
     });
 });

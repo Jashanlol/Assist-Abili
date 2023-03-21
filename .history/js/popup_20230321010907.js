@@ -1,4 +1,4 @@
-let switches = ['dark_mode', 'font_adjust'];
+let switches = ['dark_mode', 'dyslexia_mode'];
 
 switches.forEach(function (option) {
     chrome.storage.local.get(option, function (result){
@@ -14,7 +14,7 @@ switches.forEach(function (option) {
         let status = document.querySelector('#' + option + ' > #on').checked;
         switch (option) {
             case 'dark_mode': chrome.storage.local.set({ dark_mode: status }); sendFromPopup("darkmode"); break;
-            case 'font_adjust': chrome.storage.local.set({ font_adjust: status }); sendFromPopup("fontadjust"); break;
+            case 'dyslexia_mode': chrome.storage.local.set({ dyslexia_mode: status }); sendFromPopup("dyslexiamode"); break;
         }
     });
 });
@@ -84,7 +84,7 @@ function changeToPresetCSS(e) {
                 css = ":root{--abbackgrounddark0:#153265;--abbackgrounddark1:#0075F8;--abbackgrounddark2:#5C8EFF;--abbackgrounddark3:#C4CEFF;--abtextlight0:#e2e2e2;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
             case ('red-green2'):
-                css = ":root{--abbackgrounddark0:#6D5216;--abbackgrounddark1:#c99207;--abbackgrounddark2:#FFD79E;--abbackgrounddark3:#E0A800;--abtextlight0:#e2e2e2;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
+                css = ":root{--abbackgrounddark0:#6D5216;--abbackgrounddark1:#c99207;--abbackgrounddark2:#FFD79E;--abbackgrounddark3:#E0A800;--abtextlight0:#66004d;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#5ca5f6;--abstop:#000}";
                 break;
             case ('blue-yellow'):
                 css = ":root{--abbackgrounddark0:#006262;--abbackgrounddark1:#007070;--abbackgrounddark2:#ff81b4;--abbackgrounddark3:#ff5c9d;--abtextlight0:#f5f5f5;--abtextlight1:#e2e2e2;--abtextlight2:#ababab;--abtextlink:#ff81b4;--abstop:#000}";
